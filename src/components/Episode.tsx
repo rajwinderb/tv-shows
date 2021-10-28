@@ -1,3 +1,5 @@
+import "./Episode.css";
+
 interface IEpisode {
   id: number;
   url: string;
@@ -19,10 +21,21 @@ interface IEpisode {
 
 export default function Episode(episode: IEpisode): JSX.Element {
   return (
-    <div>
-      <h3>episode name: {episode.name}</h3>
-      <p>image here</p>
-      <p>description: {episode.summary}</p>
+    <div id="episode">
+      <h3>{episode.name}</h3>
+      <h4>
+        Season {episode.season} Episode {episode.number}
+      </h4>
+      <img src={episode.image.medium} alt={episode.name} />
+      <p>
+        {episode.summary
+          .slice(3, -4)
+          .replace("<p>", "")
+          .replace("</p>", "")
+          .replace("<br>", "")
+          .replace("<br>", "")
+          .replace("<p></p>", "")}
+      </p>
     </div>
   );
 }

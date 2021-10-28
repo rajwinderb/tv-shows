@@ -1,7 +1,9 @@
+import "./AppHeader.css";
+
 export default function AppHeader(): JSX.Element {
   return (
     <header>
-      <h1>Header</h1>
+      <h1>Game of Thrones</h1>
     </header>
   );
 }

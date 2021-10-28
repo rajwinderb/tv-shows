@@ -1,10 +1,10 @@
+import "./Episodes.css";
 import episodes from "../episodes.json";
 import Episode from "./Episode";
 
 export default function Episodes(): JSX.Element {
   return (
     <section>
-      <p>episodes</p>
       {episodes.map((SingleEpisode, index) => (
         <Episode
           key={index}

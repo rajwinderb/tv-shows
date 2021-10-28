@@ -1,0 +1,24 @@
+#episode {
+  padding: 15px;
+  margin: 10px;
+  border: 2px solid #f08080;
+  justify-content: center;
+}
+
+h3 {
+  font-size: 24px;
+  text-align: center;
+  color: #fbc4ab;
+}
+
+h4 {
+  font-size: 16px;
+  text-align: center;
+  color: #f4978e;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
