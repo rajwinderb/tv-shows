@@ -1,0 +1,12 @@
+header {
+  padding: 10px 15px;
+  /*  so elements that are floating stay inside the header  */
+  overflow: hidden;
+  color: #ffdab9;
+}
+
+header h1 {
+  float: left;
+  font-family: "Cambria";
+  font-size: 60px;
+}
