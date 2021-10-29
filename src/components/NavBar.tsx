@@ -1,6 +1,13 @@
 import "./NavBar.css";
 
-export default function NavBar(): JSX.Element {
+interface Props {
+  allEpisodes: number;
+  numResults: number;
+  searchText: string;
+  handleSearchText: (searchInput: string) => void;
+}
+
+export default function NavBar(props: Props): JSX.Element {
   return (
     <div id="nav">
       <input
@@ -8,8 +15,14 @@ export default function NavBar(): JSX.Element {
         placeholder="Search.."
         name="search"
         autoComplete="off"
+        value={props.searchText}
+        onChange={(e) => props.handleSearchText(e.target.value)}
       />
-      <p>Displaying n of all episodes</p>
+      <p>
+        {props.numResults === props.allEpisodes
+          ? `Displaying ${props.allEpisodes} episodes`
+          : `Displaying ${props.numResults} of ${props.allEpisodes} episodes`}
+      </p>
     </div>
   );
 }
