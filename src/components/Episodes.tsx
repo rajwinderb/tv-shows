@@ -1,18 +1,41 @@
 import "./Episodes.css";
-import episodes from "../episodes.json";
 import Episode from "./Episode";
 
 interface Props {
+  episodes: IEpisode[];
   searchText: string;
+  episodePicker: string;
   handleAllEpisodes: (num: number) => void;
   handleNumResults: (num: number) => void;
 }
 
+interface IEpisode {
+  id: number;
+  url: string;
+  name: string;
+  season: number;
+  number: number;
+  type: string;
+  airdate: string;
+  airtime: string;
+  airstamp: string;
+  runtime: number;
+  image: {
+    medium: string;
+    original: string;
+  };
+  summary: string;
+  _links: { self: { href: string } };
+}
+
 export default function Episodes(props: Props): JSX.Element {
+  const episodes = props.episodes;
   props.handleAllEpisodes(episodes.length);
   const filteredEpisodes = episodes
     .filter((episode) => {
-      if (
+      if (props.episodePicker !== "") {
+        return episode.name.includes(props.episodePicker);
+      } else if (
         episode.name.toLowerCase().includes(props.searchText.toLowerCase()) ||
         episode.summary.toLowerCase().includes(props.searchText.toLowerCase())
       ) {
