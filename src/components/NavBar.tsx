@@ -9,10 +9,10 @@ interface Props {
 
 export default function NavBar(props: Props): JSX.Element {
   return (
-    <div id="nav">
+    <nav className="SearchBar">
       <input
         type="text"
-        placeholder="Search.."
+        placeholder="Search episodes"
         name="search"
         autoComplete="off"
         value={props.searchText}
@@ -23,6 +23,6 @@ export default function NavBar(props: Props): JSX.Element {
           ? `Displaying ${props.allEpisodes} episodes`
           : `Displaying ${props.numResults} of ${props.allEpisodes} episodes`}
       </p>
-    </div>
+    </nav>
   );
 }

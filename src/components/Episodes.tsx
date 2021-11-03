@@ -41,7 +41,7 @@ export default function Episodes(props: Props): JSX.Element {
     ));
   props.handleNumResults(filteredEpisodes.length);
   return (
-    <section>
+    <section className="Episodes">
       {filteredEpisodes.length !== 0 ? (
         filteredEpisodes
       ) : (

@@ -1,4 +1,5 @@
 import "./Episode.css";
+import { formatNumber } from "../utils/formatNumber";
 
 interface IEpisode {
   id: number;
@@ -20,8 +21,6 @@ interface IEpisode {
 }
 
 export default function Episode(episode: IEpisode): JSX.Element {
-  const formatNumber = (num: number) =>
-    num > 9 ? num.toString() : `0${num.toString()}`;
   const editSummary = (text: string) =>
     text
       .slice(3, -4)
@@ -31,7 +30,7 @@ export default function Episode(episode: IEpisode): JSX.Element {
       .replace("</br>", "")
       .replace("<p></p>", "");
   return (
-    <div id="episode">
+    <div className="Episode">
       <h3>{episode.name}</h3>
       <h4>
         Season {formatNumber(episode.season)} Episode{" "}
