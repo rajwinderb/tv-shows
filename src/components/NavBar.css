@@ -1,11 +1,11 @@
-#nav {
+.SearchBar {
   margin-top: 0;
   margin-bottom: 20px;
   margin-left: 15px;
   font-size: 16px;
 }
 
-#nav input {
+.SearchBar input {
   display: inline-block;
   font-weight: 500;
   padding: 5px;
@@ -16,7 +16,7 @@
   border-style: solid;
 }
 
-#nav p {
+.SearchBar p {
   margin-left: 8px;
   display: inline-block;
 }
